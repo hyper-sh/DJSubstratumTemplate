@@ -35,6 +35,11 @@ import com.djdarkknight.theme.template.ThemeFunctions.isCallingPackageAllowed
  */
 
 class SubstratumLauncher : Activity(), BillingProcessor.IBillingHandler {
+ override fun onCreate() {
+        // Apply dynamic color
+        DynamicColors.applyToActivitiesIfAvailable(this)
+    }
+
     private var bp: BillingProcessor? = null
 
     private val debug = false
